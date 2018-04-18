@@ -1,27 +1,36 @@
-  // $('#Tally').click(function(){ 
-  
-function search(ele) {
+var values = [.15, .20, .25, .30, .35];
+
+function search() {
     if(event.key === 'Enter') {
-    var rate = $("option").val(); 
-    var count = $(".wordnumber").val();
-  
-    var total = (rate * count);
-    $("#totalHere").text( "$" + total.toFixed(2));    
-    }
-}
-//  });
-    
+   
+      var rate = $("#langSelect option:selected").val(); 
+      var count = $(".wordnumber").val();
+      var sum = (rate * count);
+      $('#totalHere').text("$ " + sum.toFixed(2)); 
+     };
+
+};
+
+/*
+$(".wordnumber").change(function(){
+  var rate = $(this).val(); 
+var count = $(".wordnumber").val();
+var total = (rate * count);
+//$("#totalHere").text( "$" + total.toFixed(2)); 
+})
+ */
 
 $('#langSelect').change(function(){
-var rate = $(this).val(); 
+var rate = $("#langSelect option:selected").val(); 
 var count = $(".wordnumber").val();
 var total = (rate * count);
 $("#totalHere").text( "$" + total.toFixed(2)); 
-  
-});
+ });
 
-  //value rates for the language options
-  var values = [.15, .20, .25, .30, .35];
+$("#clear").click(function(){
+  $('.wordnumber').val('');
+  $('#totalHere').text('');
+});
 
   //linking specific values to corresponding languages on the front
 document.getElementById('ES').setAttribute('value', values[0]);

@@ -1,6 +1,14 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rate calc</title>
+	
+</head>
+<body>
 
-<input name="wordnumber" class="wordnumber" placeholder="est words" type="text" onkeydown="search(this)">  
+
+	<input name="wordnumber" class="wordnumber" placeholder="est words" type="text" onkeydown="search(this)">  
 
 <select id="langSelect">
 
@@ -12,11 +20,19 @@
 
 </select>
 
-<!-- <input id="Tally" type="button" value="Click!" /> -->
   
+  <input id="clear" type="button" value="Reset" />
 <div>
   Estimated Total:
   <div id="totalHere">
   
     </div>
       </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="./ratecalculator.js"></script>
+</body>
+</html>
+
+
+
