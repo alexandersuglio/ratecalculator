@@ -3,10 +3,27 @@ var values = [.15, .20, .25, .30, .35];
 function search() {
     if(event.key === 'Enter') {
    
+
+
+
       var rate = $("#langSelect option:selected").val(); 
       var count = $(".wordnumber").val();
       var sum = (rate * count);
       $('#totalHere').text("$ " + sum.toFixed(2)); 
+
+
+if (count > 300000)
+{
+
+ var additionalCharge = 7777;
+
+  var newsum = sum + additionalCharge;
+
+ $('#totalHere').html("$ " + sum.toFixed(2) + "</br> $" + additionalCharge.toFixed(2)); 
+
+  $("#totalHere").append("</br><div style='color:red'> added fees apply to word counts exceeding 300,000 words</div>" + "</br> $" + newsum.toFixed(2)); 
+}
+
      };
 
 };
@@ -23,14 +40,28 @@ var total = (rate * count);
 $('#langSelect').change(function(){
 var rate = $("#langSelect option:selected").val(); 
 var count = $(".wordnumber").val();
-var total = (rate * count);
-$("#totalHere").text( "$" + total.toFixed(2)); 
+var sum = (rate * count);
+$("#totalHere").text( "$" + sum.toFixed(2)); 
+
+if (count > 300000)
+{
+
+ var additionalCharge = 7777;
+
+  var newsum = sum + additionalCharge;
+
+ $('#totalHere').html("$ " + sum.toFixed(2) + "</br> $" + additionalCharge.toFixed(2)); 
+
+  $("#totalHere").append("</br><div style='color:red'> added fees apply to word counts exceeding 300,000 words</div>" + "</br> $" + newsum.toFixed(2)); 
+}
  });
 
 $("#clear").click(function(){
   $('.wordnumber').val('');
   $('#totalHere').text('');
 });
+
+
 
   //linking specific values to corresponding languages on the front
 document.getElementById('ES').setAttribute('value', values[0]);
